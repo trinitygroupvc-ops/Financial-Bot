@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stock Dashboard</title>
-  <script defer src="app.js"></script>
-</head>
-<body>
-  <h1>Stock Dashboard (Finnhub)</h1>
-  <input type="text" id="symbolInput" placeholder="Enter stock symbol (e.g., AAPL)" />
-  <button onclick="getStock()">Get Stock Data</button>
-  <pre id="output"></pre>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trinity Capital — Market Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#0A0E17] text-gray-200 font-[Inter]">
+    <nav class="flex items-center justify-between p-6 bg-[#0D111C] border-b border-gray-800 shadow-lg">
+      <div class="flex items-center space-x-3">
+        <h1 class="text-xl font-semibold text-white">Trinity Group VC</h1>
+      </div>
+      <p class="text-gray-400 text-sm">Market Intelligence Dashboard</p>
+    </nav>
+
+    <div class="max-w-4xl mx-auto p-8">
+      <div class="flex space-x-4 mb-8">
+        <input
+          id="symbolInput"
+          type="text"
+          placeholder="Enter symbol (e.g., AAPL)"
+          class="flex-grow bg-[#1F2937] text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00C896]"
+        />
+        <button
+          id="fetchBtn"
+          class="bg-[#00C896] hover:bg-[#00b383] text-black font-semibold px-5 py-2 rounded-lg transition-all"
+        >
+          Search
+        </button>
+      </div>
+
+      <div id="stockCard" class="hidden bg-[#111827] rounded-2xl p-6 shadow-lg transition-all"></div>
+      <p id="loading" class="text-gray-400 hidden">Fetching data...</p>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
